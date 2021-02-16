@@ -2,13 +2,10 @@ import { useState } from "react";
 //importing Bootstrap components
 import {
   Button,
-  Col,
-  Container,
   Form,
   FormControl,
   Nav,
   Navbar,
-  Row,
 } from "react-bootstrap";
 //importing react router
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
