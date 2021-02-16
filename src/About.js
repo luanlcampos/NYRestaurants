@@ -7,7 +7,6 @@ import {
 import { motion } from "framer-motion";
 import { GitHub, LinkedIn } from "@material-ui/icons";
 import "./About.css";
-//import bgimage from "./public/jumbotron-bg.jpg";
 
 export default function About() {
   document.title = "About me";
