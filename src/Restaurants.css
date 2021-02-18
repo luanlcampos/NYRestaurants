@@ -10,6 +10,18 @@
 a.page-link {
   color: white;
   background: transparent;
+  border: 2px solid #fff;
+}
+
+a.page-link:focus,
+a.page-link:active, button.btn.btn-primary:active, button.btn.btn-primary:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: black;
 }
 
 .rest-card:hover {

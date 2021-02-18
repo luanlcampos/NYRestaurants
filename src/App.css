@@ -5,14 +5,27 @@ body,
 }
 
 #root,
-body, html {
+body,
+html {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("./public/bg-resized.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 .m-nav {
-  color: #fff !important;
+  color: rgba(255, 255, 255, 0.789) !important;
+}
+
+.form-control::placeholder {
+  color: rgb(189, 189, 189);
+}
+
+
+.form-control:focus,
+.form-control:active {
+  border: 1px solid #fff;
+  outline: none !important;
+  box-shadow: none;
 }
 
 .content {

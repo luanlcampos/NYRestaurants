@@ -53,7 +53,6 @@ function App() {
               <FormControl
                 type="text"
                 placeholder="Borough"
-                autoFocus
                 className="mr-sm-2"
                 value={searchString}
                 onChange={(e) => setSearchString(e.target.value)}
@@ -61,6 +60,7 @@ function App() {
               />
               <Button
                 type="submit"
+                className="sub-button"
                 style={{
                   background: "transparent",
                   color: "#FFF",
