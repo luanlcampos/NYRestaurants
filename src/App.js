@@ -28,7 +28,9 @@ function App() {
   let history = useHistory();
   function handleSubmit(e) {
     e.preventDefault();
-    history.push(`/restaurants?borough=${searchString}`);
+    if(searchString){
+      history.push(`/restaurants?borough=${searchString}`);
+    }
     setSearchString("");
   }
 
