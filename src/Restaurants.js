@@ -96,7 +96,7 @@ export default function Restaurants() {
           className="mt-3"
         >
           <Card.Body>
-            <Card.Title>Restaurant List</Card.Title>
+            <Card.Title>{borough? borough : ""} Restaurant List</Card.Title>
             <Card.Subtitle>
               Full List Of Restaurants. Optionally sorted by borough
             </Card.Subtitle>
