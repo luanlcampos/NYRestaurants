@@ -1,15 +1,29 @@
-
 .jumbotron {
   min-height: 100%;
 }
 
+.abt-page {
+ 
+}
+
+.accordion {
+    color: #FFF;
+}
+
+.list-group-flush > .list-group-item {
+  color: #FFF;
+  background: transparent;
+  border-bottom: 1px solid #FFF;
+}
+
 .jumb-bg {
   /* scrim so we can read text over image https://css-tricks.com/design-considerations-text-images/ */
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("./public/jumbotron-bg.jpg");
-  background-size: cover;
+  background-size: cover; */
+  background: none;
   color: white;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   text-align: center;
   margin: 0;
   display: flex;
@@ -17,8 +31,14 @@
   justify-content: center;
 }
 
-.card {
-    
-    width: 100%;
+#proj {
+  
+}
 
+.card {
+  width: 100%;
+}
+
+.show-more {
+  
 }

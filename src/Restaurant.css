@@ -1,11 +1,17 @@
 .rating-card {
-  margin-top: 1rem;
+  margin-top: 2rem;
   vertical-align: center;
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  padding-top: 5px;
-  margin-top: 1rem;
+
+}
+
+.card {
+  background: transparent;
+  color: #FFF;
+  border: 1px solid #fff;
+
 }
 
 .rating-section {

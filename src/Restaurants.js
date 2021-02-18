@@ -1,5 +1,8 @@
+//React Hooks
 import { useState, useEffect } from "react";
+//React-Router-Dom Hooks
 import { useLocation, useHistory } from "react-router-dom";
+//React-Bootstrap Components
 import {
   Row,
   Container,
@@ -9,26 +12,20 @@ import {
   Alert,
   Pagination,
 } from "react-bootstrap";
-import Rating from "@material-ui/lab/Rating";
-import { LocationOn, RestaurantMenu } from '@material-ui/icons';
-import { motion } from "framer-motion"
-import {getGradeAverage} from "./Restaurant";
+//Custom Components
+import RestaurantList from './RestaurantList';
+//Custom Functions
+import {loadApi} from './Load';
+//Custom CSS
 import "./Restaurants.css";
 
-async function loadApi(url) {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`Error ${res.status}`);
-  }
-  return res.json();
-}
-
+//Get the query from the URL 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
 export default function Restaurants() {
-  document.title = "New York Restaurants"
+  document.title = "New York Restaurants";
   const [restaurants, setRestaurants] = useState(null);
   const [page, setPage] = useState(1);
   let query = useQuery();
@@ -36,12 +33,11 @@ export default function Restaurants() {
   let history = useHistory();
 
   useEffect(() => {
-    
     let apiUrl = `https://dry-lowlands-75857.herokuapp.com/api/restaurants?page=${page}&perPage=10&borough=${borough}`;
     if (!borough) {
       apiUrl = `https://dry-lowlands-75857.herokuapp.com/api/restaurants?page=${page}&perPage=10`;
     }
-  
+
     loadApi(apiUrl)
       .then((results) => {
         if (results) {
@@ -52,11 +48,10 @@ export default function Restaurants() {
   }, [borough, page]);
 
   useEffect(() => {
-    if(borough) {
+    if (borough) {
       setPage(1);
     }
-
-  }, [borough])
+  }, [borough]);
 
   function previousPage() {
     if (page > 1) {
@@ -88,12 +83,18 @@ export default function Restaurants() {
     );
   }
 
-
-
   return (
-    <Container >
-      <Row >
-        <Card style={{ width: "100% " }} className="mt-3">
+    <Container fluid>
+      <Row>
+        <Card
+          style={{
+            width: "100% ",
+            background: 'transparent',
+            color: '#FFF',
+            border: "1px solid #FFF",
+          }}
+          className="mt-3"
+        >
           <Card.Body>
             <Card.Title>Restaurant List</Card.Title>
             <Card.Subtitle>
@@ -102,47 +103,7 @@ export default function Restaurants() {
           </Card.Body>
         </Card>
       </Row>
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 1 }}
-      >
-        <Row className="mt-3">
-          {restaurants.map((restaurant) => (
-            <Col xs={12} md={6} lg={4} xl={3} key={restaurant._id} className="cards">
-                <Card
-                  style={{
-                    verticalAlign: "center",
-
-                    paddingTop: "5px"
-
-                  }}
-                  className="m-3 text-center rest-card"
-                  onClick={() => {
-                    history.push(`/restaurant/${restaurant._id}`);
-                  }}
-                >
-                  <Card.Title style={{fontWeight: "bold"}}>{restaurant.name}</Card.Title>
-                  <Card.Subtitle><RestaurantMenu/>{restaurant.cuisine}</Card.Subtitle>
-                  <Card.Text>
-                  <LocationOn/>{restaurant.address.building} {restaurant.address.street}
-                    <br />
-                    {restaurant.borough}
-                    <br />
-                    <Rating
-                      name="half-rating-read"
-                      defaultValue={Math.round(
-                        (getGradeAverage(restaurant.grades))
-                      )}
-                      precision={0.5}
-                      readOnly
-                    /> 
-                  </Card.Text>
-                </Card>
-            </Col>
-          ))}
-        </Row>
-        </motion.div>
+          <RestaurantList restaurants={restaurants} history={history} />
 
       <Pagination>
         <Pagination.Prev onClick={previousPage} />

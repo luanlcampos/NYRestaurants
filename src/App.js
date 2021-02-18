@@ -1,3 +1,4 @@
+//React Hooks
 import { useState } from "react";
 //importing Bootstrap components
 import {
@@ -6,18 +7,21 @@ import {
   FormControl,
   Nav,
   Navbar,
+  Container,
 } from "react-bootstrap";
-//importing react router
+//React-router-dom components and hooks
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
-//importing react router bootstrap
+//React-router-bootstrap components
 import { LinkContainer } from "react-router-bootstrap";
+//Custom Components
 import Restaurants from "./Restaurants";
 import Restaurant from "./Restaurant";
 import About from "./About";
 import NotFound from "./NotFound";
-//Loading css
-import "./App.css";
 import StickyFooter from "./Footer";
+//Loading Custom CSS
+import "./App.css";
+
 
 function App() {
   const [searchString, setSearchString] = useState("");
@@ -30,19 +34,19 @@ function App() {
 
   return (
     <>
-      <div fluid className="content">
-        <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar expand="lg">
           <LinkContainer to="/">
-            <Navbar.Brand>New York Restaurants</Navbar.Brand>
+            <Navbar.Brand className="m-nav">New York Restaurants</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <LinkContainer to="/restaurants">
-                <Nav.Link>Full List</Nav.Link>
+                <Nav.Link className="m-nav">Full List</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/about">
-                <Nav.Link>About</Nav.Link>
+                <Nav.Link className="m-nav">About</Nav.Link>
               </LinkContainer>
             </Nav>
             <Form onSubmit={handleSubmit} inline>
@@ -53,14 +57,22 @@ function App() {
                 className="mr-sm-2"
                 value={searchString}
                 onChange={(e) => setSearchString(e.target.value)}
+                style={{ background: "transparent", color: "white" }}
               />
-              <Button type="submit" variant="outline-success">
+              <Button
+                type="submit"
+                style={{
+                  background: "transparent",
+                  color: "#FFF",
+                  border: "1px solid #FFF",
+                }}
+              >
                 Search
               </Button>
             </Form>
           </Navbar.Collapse>
         </Navbar>
-        
+
         <Switch>
           <Route exact path="/">
             <Redirect to="/Restaurants" />
@@ -68,7 +80,7 @@ function App() {
           <Route exact path="/about">
             <About />
           </Route>
-          <Route path="/Restaurants">
+          <Route exact path="/Restaurants">
             <Restaurants />
           </Route>
           <Route path="/Restaurant/:id">
@@ -78,8 +90,8 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
-      </div>
-      <StickyFooter className="footer"/>
+      </Container>
+      <StickyFooter className="footer" />
 
       <br />
     </>

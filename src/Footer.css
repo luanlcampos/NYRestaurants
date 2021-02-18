@@ -1,5 +1,6 @@
 footer {
     margin: 0;
     margin-top: 'auto';
-    background-color: lightgray;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5); 
 }
