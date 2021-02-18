@@ -7,16 +7,19 @@
   margin-top: 20%;
 }
 
+a.page-link {
+  color: white;
+  background: transparent;
+}
 
 .rest-card:hover {
   border: 1px black solid;
   box-shadow: 2px px grey;
 }
 
-
 .rest-card {
-    cursor: pointer;
-    min-height: 170px;
+  cursor: pointer;
+  min-height: 170px;
 }
 
 @media (max-width: 768px) {

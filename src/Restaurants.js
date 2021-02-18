@@ -105,9 +105,9 @@ export default function Restaurants() {
       </Row>
           <RestaurantList restaurants={restaurants} history={history} />
 
-      <Pagination>
+      <Pagination className="justify-content-end">
         <Pagination.Prev onClick={previousPage} />
-        <Pagination.Item>{page}</Pagination.Item>
+        <Pagination.Item >{page}</Pagination.Item>
         <Pagination.Next onClick={nextPage} />
       </Pagination>
     </Container>
