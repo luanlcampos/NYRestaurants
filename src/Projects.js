@@ -16,7 +16,7 @@ export const projects = [
       "Established a system that allows user to add and delete departments and employees",
       "Created a SQL database using PostgreSQL to hold departments and employees tables",
       "Designed a login and register system using MongoDB and utilizing a password hashing tool (bcrypt.js) to encrypt the password before sending it to the server",
-      "Developed a dynamic system that accepts image uploading and form submission usingnode.js middlewares as body-parser and multer",
+      "Developed a dynamic system that accepts image uploading and form submission using express middleware as body-parser and multer",
     ],
     link: "https://mysystemmanager.herokuapp.com/",
   },

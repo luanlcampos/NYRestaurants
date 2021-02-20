@@ -24,6 +24,10 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
+function Capitalize (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();;
+}
+
 export default function Restaurants() {
   document.title = "New York Restaurants";
   const [restaurants, setRestaurants] = useState(null);
@@ -32,12 +36,14 @@ export default function Restaurants() {
   let borough = query.get("borough");
   let history = useHistory();
 
-  useEffect(() => {
-    let apiUrl = `https://dry-lowlands-75857.herokuapp.com/api/restaurants?page=${page}&perPage=10&borough=${borough}`;
-    if (!borough) {
-      apiUrl = `https://dry-lowlands-75857.herokuapp.com/api/restaurants?page=${page}&perPage=10`;
-    }
+  
 
+  useEffect(() => {
+    let apiUrl = `https://dry-lowlands-75857.herokuapp.com/api/restaurants?page=${page}&perPage=10`;
+    if (borough) {
+      apiUrl += `&borough=${Capitalize(borough)}`
+    }
+    
     loadApi(apiUrl)
       .then((results) => {
         if (results) {
@@ -96,7 +102,7 @@ export default function Restaurants() {
           className="mt-3"
         >
           <Card.Body>
-            <Card.Title>{borough? borough : ""} Restaurant List</Card.Title>
+            <Card.Title>{borough? Capitalize(borough) : ""} Restaurant List</Card.Title>
             <Card.Subtitle>
               Full List Of Restaurants. Optionally sorted by borough
             </Card.Subtitle>
