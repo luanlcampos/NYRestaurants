@@ -14,10 +14,10 @@ import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 //React-router-bootstrap components
 import { LinkContainer } from "react-router-bootstrap";
 //Custom Components
-import Restaurants from "./Restaurants";
-import Restaurant from "./Restaurant";
-import About from "./About";
-import NotFound from "./NotFound";
+import Restaurants from "../Restaurants/Restaurants";
+import Restaurant from "../Restaurant/Restaurant";
+import About from "../About/About";
+import NotFound from "../NotFound";
 import StickyFooter from "./Footer";
 //Loading Custom CSS
 import "./App.css";

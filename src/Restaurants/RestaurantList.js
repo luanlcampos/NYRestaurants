@@ -7,7 +7,7 @@ import {RestaurantMenu, LocationOn} from '@material-ui/icons';
 import {Rating} from '@material-ui/lab';
 
 //Custom Functions
-import {getGradeAverage} from './Load';
+import {getGradeAverage} from '../Load';
 
 
 export default function RestaurantList ({restaurants, history}) {

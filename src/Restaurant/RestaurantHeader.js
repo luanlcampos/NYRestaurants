@@ -6,7 +6,7 @@ import { Rating } from "@material-ui/lab";
 import { LocationOn, RestaurantMenu } from "@material-ui/icons";
 
 //Custom functions
-import { getGradeAverage } from "./Load";
+import { getGradeAverage } from "../Load";
 
 export default function RestaurantHeader({ restaurant }) {
   return (

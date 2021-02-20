@@ -8,7 +8,7 @@ body,
 body,
 html {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("./public/bg-resized.jpg") no-repeat center center fixed;
+    url("../public/bg-resized.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 

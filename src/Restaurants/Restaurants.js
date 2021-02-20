@@ -15,7 +15,7 @@ import {
 //Custom Components
 import RestaurantList from './RestaurantList';
 //Custom Functions
-import {loadApi} from './Load';
+import {loadApi} from '../Load';
 //Custom CSS
 import "./Restaurants.css";
 

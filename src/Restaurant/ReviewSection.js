@@ -16,7 +16,7 @@ import Rating from "@material-ui/lab/Rating";
 import Chance from 'chance';
 
 //Custom functions
-import {getGradeAverage} from './Load';
+import {getGradeAverage} from '../Load';
 
 //Setup the chance object
 const chance = new Chance();

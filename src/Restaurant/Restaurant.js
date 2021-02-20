@@ -9,7 +9,7 @@ import ReviewSection from "./ReviewSection";
 import RestaurantHeader from "./RestaurantHeader";
 
 //Custom Functions
-import { loadRestaurant } from "./Load";
+import { loadRestaurant } from "../Load";
 //Custom CSS
 import "./Restaurant.css";
 
