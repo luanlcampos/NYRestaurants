@@ -51,7 +51,7 @@ export default function Restaurant() {
   if (loading) {
     return (
       <Col>
-        <Spinner animation="border" role="status" className="centerSpinner">
+        <Spinner animation="border" role="status" className="centerSpinner" variant="light">
           <span className="sr-only">Loading...</span>
         </Spinner>
       </Col>
